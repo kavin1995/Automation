@@ -59,6 +59,21 @@ public class SauceStep extends BaseClass {
 	    
 	}
 
+	@Then("User should click the Add to cart button {string} ,{string} and {string}")
+	public void user_should_click_the_add_to_cart_button_and(String first, String last, String pincode) {
+	   
+		Click(login.getClick3());
+		Click(login.getClick4());
+		EnterValue(login.getFirst(), first);
+		EnterValue(login.getLast(), last);
+		EnterValue(login.getPin(), pincode);
+		Click(login.getClick5());
+		Click(login.getClick7());
+	}
+
+
+
+
 	@Then("User should click the Add to cart button")
 	public void user_should_click_the_add_to_cart_button() {
 		Click(login.getClick3());
@@ -125,17 +140,19 @@ public class SauceStep extends BaseClass {
 	    Click(pro.getClick11());
 	}
 
-	@Then("User should click all cart")
-	public void user_should_click_all_cart() {
+	@Then("User should click all cart {string} ,{string} and {string}")
+	public void user_should_click_all_cart_and(String firstname, String Letter, String code) {
+	  
 		 pro = new SaucePro();
-	   Click(pro.getClick12());
-	   Click(pro.getClick14());
-	   EnterValue(pro.getFirstname(), "aravind");
-	   EnterValue(pro.getLastname(), "kumar");
-	   EnterValue(pro.getPincode(), "600099");
-	   Click(pro.getConclick());
-	   
+		   Click(pro.getClick12());
+		   Click(pro.getClick14());
+		   EnterValue(pro.getFirstname(), firstname);
+		   EnterValue(pro.getLastname(), Letter);
+		   EnterValue(pro.getPincode(), code);
+		   Click(pro.getConclick());
+		   
 	}
+
 
 	@Then("User should click cart")
 	public void user_should_click_cart() {

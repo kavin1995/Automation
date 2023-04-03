@@ -85,14 +85,14 @@ public class BaseClass {
 	public static void SBVT(WebElement w, String text) {
 		s = new Select(w);
 		s.selectByVisibleText(text);
+		
 	}
-//
-//	public static void TakeScreenShot() throws IOException {
-//		TakesScreenshot ts = (TakesScreenshot) driver;
-//		File screenshotAs = ts.getScreenshotAs(OutputType.FILE);
-//		File SaveFile = new File("C:\\Users\\VDI020\\eclipse-workspace\\Maven_Proj_M\\ScreenshotSS.jpeg");
-//		FileUtils.copyDirectory(screenshotAs, SaveFile);
-//
-//	}
+	
+	
+	public static void text(WebElement element) {
+		String text = element.getText();
+		   System.out.println(text);
+
+	}
 
 }
