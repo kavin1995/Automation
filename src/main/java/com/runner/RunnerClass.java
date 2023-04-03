@@ -6,7 +6,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(tags="@tags",features = "src\\main\\resources\\feature", glue = "com.stepdefinit", 
+@CucumberOptions(features = "src\\main\\resources\\feature", glue = "com.stepdefinit", 
 dryRun = false,   plugin = {"json:target/cucumber.json" })
 public class RunnerClass {
 

@@ -1,7 +1,10 @@
 package com.resources;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Properties;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -26,6 +29,15 @@ public class BaseClass {
 		driver = new ChromeDriver(co);
 		driver.manage().window().maximize();
 
+	}
+	
+	public String getproperty(String value) throws FileNotFoundException, IOException {
+		Properties properties = new Properties();
+		properties.load(new FileInputStream(System.getProperty("user.dir")+"\\Endpoint\\Endpoint.properties"));
+		Object object = properties.get(value);
+		String key =(String) object;
+		return key;
+		
 	}
 
 	public static void LaunchURL(String URL) {

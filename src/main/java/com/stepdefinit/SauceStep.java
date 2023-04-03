@@ -3,6 +3,8 @@ package com.stepdefinit;
 import com.Pom.SauceLogin;
 import com.Pom.SaucePro;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -27,17 +29,17 @@ public class SauceStep extends BaseClass {
 	}
 	
 	@Given("User should launch the browser")
-	public void user_should_launch_the_browser() {
+	public void user_should_launch_the_browser() throws FileNotFoundException, IOException {
 	  LaunchBrowser();
-	  LaunchURL("https://www.saucedemo.com/");
+	  LaunchURL(getproperty("Testurl"));
 	  driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 
 	@When("User should write {string} and {string}")
-	public void user_should_write_and(String username, String password) {
+	public void user_should_write_and(String username, String password) throws FileNotFoundException, IOException {
 	   login = new SauceLogin();
-	  EnterValue(login.getUsername(), username);
-	   EnterValue(login.getPassword(), password);
+	  EnterValue(login.getUsername(),getproperty("UsernameID"));
+	   EnterValue(login.getPassword(), getproperty("PasswordID"));
 	}
 
 	@When("User should click the login button")

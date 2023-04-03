@@ -1,4 +1,6 @@
 package com.stepdefinit;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import com.Pom.CyclosLogin;
@@ -19,18 +21,18 @@ public class CyclosTestStep extends BaseClass {
 	}
 	
 	@Given("User should lanch the url")
-	public void user_should_lanch_the_url() {
+	public void user_should_lanch_the_url() throws FileNotFoundException, IOException {
 		LaunchBrowser();
-		LaunchURL("https://demo.cyclos.org/ui/home");
+		LaunchURL(getproperty("Cyclosurl"));
 		log=new CyclosLogin();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	    Click(log.getClick());
 	}
 
 	@When("User should enter the {string} and {string}")
-	public void user_should_enter_the_and(String User, String pass) {
-	  EnterValue(log.getClick1(), User);
-	  EnterValue(log.getClick2(), pass);
+	public void user_should_enter_the_and(String User, String pass) throws FileNotFoundException, IOException {
+	  EnterValue(log.getClick1(), getproperty("UserID"));
+	  EnterValue(log.getClick2(), getproperty("PassID"));
 	  Click(log.getClick3());
 
 	}
@@ -88,6 +90,7 @@ public class CyclosTestStep extends BaseClass {
 		 pay=new CyclosPay();
 	    Click(pay.getClickvoc());
 	    Click(pay.getClickdir());
+	    Click(pay.getClickdgar());
 	    Click(pay.getClickmake());
 	    Click(pay.getClickid());
 	    Click(pay.getClicknext());

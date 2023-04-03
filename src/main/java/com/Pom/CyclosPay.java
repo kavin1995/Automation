@@ -33,6 +33,9 @@ public class CyclosPay extends BaseClass{
 	@FindBy(xpath="//div[@class='nav-item-text'][normalize-space()='Business directory']")
 	private WebElement clickdir;
 	
+	@FindBy(xpath="//format-field-value[normalize-space()='Natural garden pools']")
+	private WebElement clickdgar;
+	
 	@FindBy(xpath="//div[normalize-space()='Make payment']")
 	private WebElement clickmake;
 	
@@ -89,7 +92,11 @@ public class CyclosPay extends BaseClass{
 		return clickcon;
 	}
 	
-	
+
+	public WebElement getClickdgar() {
+		return clickdgar;
+	}
+
 	
 	
 	
