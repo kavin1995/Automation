@@ -3,6 +3,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.junit.After;
+
 import com.Pom.CyclosLogin;
 import com.Pom.CyclosPay;
 import com.Pom.CyclosSelect;
@@ -14,7 +16,7 @@ public class CyclosTestStep extends BaseClass {
 	CyclosLogin log;
 	CyclosSelect sel;
 	CyclosPay pay;
-	
+	@After
 	public void after() {
 		driver.quit();
 
@@ -25,7 +27,7 @@ public class CyclosTestStep extends BaseClass {
 		LaunchBrowser();
 		LaunchURL(getproperty("Cyclosurl"));
 		log=new CyclosLogin();
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	    Click(log.getClick());
 	}
 
@@ -86,13 +88,13 @@ public class CyclosTestStep extends BaseClass {
 	}
 
 	@When("User should click voucher {string}")
-	public void user_should_click_voucher(String string) {
+	public void user_should_click_voucher(String value) {
 		 pay=new CyclosPay();
 	    Click(pay.getClickvoc());
 	    Click(pay.getClickdir());
 	    Click(pay.getClickdgar());
 	    Click(pay.getClickmake());
-	    Click(pay.getClickid());
+	    EnterValue(pay.getClickid(), value);
 	    Click(pay.getClicknext());
 	    Click(pay.getClickcon());
 	}
