@@ -23,10 +23,12 @@ When User should write "<username>" and "<password>"
 And User should click the login button
 Then User should verify success message after login
 And User should click the Add to cart button "<first>" ,"<last>" and "<pincode>"
-
-Examples:
 |first|last|pincode|
-|praveen|kumar|600096|
+|ravi|kumar|600096|
+|kumar|kumar|698578|
+|ram|kumar|234678|
+|siva|kumar|987654|
+
 
 @tag1
 Scenario: verify the login page

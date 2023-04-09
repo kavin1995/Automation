@@ -12,6 +12,11 @@ Then User should verify the responce name
 Scenario: Verify the git data details
 Given User should login the page 
 When User should get the responce 
+Then User should verify the responce id
+
+Scenario: Verify the git data details
+Given User should login the page 
+When User should get the responce 
 Then User should verify the private
 
 Scenario: Verify the git data details
@@ -91,4 +96,3 @@ Scenario: Verify the delete details
 Given User should  get deleted the name
 When User should get deleted the responce 
 Then User should verify the responce of deleted
-

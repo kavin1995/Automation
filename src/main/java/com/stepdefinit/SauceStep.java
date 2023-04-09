@@ -5,6 +5,7 @@ import com.Pom.SaucePro;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -12,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 import com.Pom.SauceCart;
 import com.resources.BaseClass;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
 import io.cucumber.java.en.*;
 
@@ -22,7 +24,7 @@ public class SauceStep extends BaseClass {
 	SauceLogin login;
 	
 	
-	@After
+	
 	public void after() {
 		driver.close();
 
@@ -62,27 +64,27 @@ public class SauceStep extends BaseClass {
 	}
 
 	@Then("User should click the Add to cart button {string} ,{string} and {string}")
-	public void user_should_click_the_add_to_cart_button_and(String first, String last, String pincode) {
+	public void user_should_click_the_add_to_cart_button_and(String first, String last, String pincode,DataTable dataTable) {
 	   
 		Click(login.getClick3());
 		Click(login.getClick4());
-		EnterValue(login.getFirst(), first);
-		EnterValue(login.getLast(), last);
-		EnterValue(login.getPin(), pincode);
+		
+		List<List<String>> list = dataTable.asLists();
+		List<String> value = list.get(2);
+		EnterValue(login.getFirst(),value.get(0));
+		EnterValue(login.getLast(), value.get(1));
+		EnterValue(login.getPin(), value.get(2));	
 		Click(login.getClick5());
 		Click(login.getClick7());
 	}
 
-
-
-
 	@Then("User should click the Add to cart button")
 	public void user_should_click_the_add_to_cart_button() {
 		Click(login.getClick3());
-		Click(login.getClick4());
+		Click(login.getClick4());	
 		EnterValue(login.getFirst(), "praveen");
 		EnterValue(login.getLast(), "kumar");
-		EnterValue(login.getPin(), "600096");
+		EnterValue(login.getPin(), "732872");
 		Click(login.getClick5());
 		Click(login.getClick7());
 	  
