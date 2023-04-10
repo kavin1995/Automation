@@ -1,3 +1,4 @@
+@tags
 Feature: Verifying the git data page
 Scenario: Verify the git data details
 Given User should login the page 

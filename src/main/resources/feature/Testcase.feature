@@ -1,4 +1,4 @@
-@tags
+@tag
 Feature: Verifying the sauce page
 @tag1
 Scenario: verify the login page
