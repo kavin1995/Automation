@@ -17,7 +17,7 @@ public class TestData extends BassClassTest{
 	@Given("User should login the page")
 	public void user_should_login_the_page() {
 	 RestAssured.baseURI="https://api.github.com/repos/kavin1995/Testcases";
-	 reqspec= RestAssured.given().header("Authorization","Bearer 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");
+	 reqspec= RestAssured.given().header("Authorization","Bearer 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");
 
 	}
 
@@ -66,7 +66,7 @@ public class TestData extends BassClassTest{
 	@Given("User should login the page s")
 	public void user_should_login_the_page_s() {
 	 RestAssured.baseURI="https://api.github.com/user/repos";
-	 reqspec=RestAssured.given().header("Authorization","Bearer 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")
+	 reqspec=RestAssured.given().header("Authorization","Bearer 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")
 			 .body("{\"name\":\"Rest\",\"description\":\"This is your first repo!\",\"homepage\":\"https://github.com\",\"private\":false,\"is_template\":true}");
 	 
 	}
@@ -88,7 +88,7 @@ public class TestData extends BassClassTest{
 	@Given("User should get the page s")
 	public void user_should_get_the_page_s() {
 		RestAssured.baseURI="https://api.github.com/repos/kavin1995/Rest";
-		 reqspec= RestAssured.given().header("Authorization","Bearer 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");
+		 reqspec= RestAssured.given().header("Authorization","Bearer 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");
 		
 	}
 
@@ -136,7 +136,7 @@ public class TestData extends BassClassTest{
 	@Given("User should patch the name")
 	public void user_should_patch_the_name() {
 	   RestAssured.baseURI="https://api.github.com/repos/kavin1995/Rest";
-	   reqspec=RestAssured.given().header("Authorization","Bearer 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")
+	   reqspec=RestAssured.given().header("Authorization","Bearer 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")
 			   .body("{\"name\":\"APIRest\",\"description\":\"This is your first repository\",\"homepage\":\"https://github.com\",\"private\":true,\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true}");
 	   
 	}
@@ -150,7 +150,7 @@ public class TestData extends BassClassTest{
 	@Given("User should  get patch the name")
 	public void user_should_get_patch_the_name() {
 		RestAssured.baseURI="https://api.github.com/repos/kavin1995/APIRest";
-		 reqspec= RestAssured.given().header("Authorization","Bearer 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");
+		 reqspec= RestAssured.given().header("Authorization","Bearer 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");
 	}
 
 	@When("User should get patch the responce")
@@ -199,7 +199,7 @@ public class TestData extends BassClassTest{
 	@Given("User should  delete the name")
 	public void user_should_delete_the_name() {
 	   RestAssured.baseURI="https://api.github.com/repos/kavin1995/APIRest";
-	   reqspec=RestAssured.given().header("Authorization","Bearer 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");
+	   reqspec=RestAssured.given().header("Authorization","Bearer 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");
 	}
 
 	@When("User should get delete the responce")
@@ -218,7 +218,7 @@ public class TestData extends BassClassTest{
 	@Given("User should  get deleted the name")
 	public void user_should_get_deleted_the_name() {
 		 RestAssured.baseURI="https://api.github.com/repos/kavin1995/APIRest";
-		   reqspec=RestAssured.given().header("Authorization","Bearer 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");
+		   reqspec=RestAssured.given().header("Authorization","Bearer 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");
 	}
 
 	@When("User should get deleted the responce")
